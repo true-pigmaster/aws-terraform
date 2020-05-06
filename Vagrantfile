@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
    end
   config.vm.define "terraform" do |ter|
     ter.vm.hostname = "terraform"
+    ter.vm.synced_folder "tf" , "/home/vagrant/src" 
     ter.vm.provider "virtualbox" do |tvb|
       tvb.name = "terraform_vm"
     end
