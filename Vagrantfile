@@ -19,6 +19,9 @@ Vagrant.configure("2") do |config|
     end
   end
    config.vm.provision "shell", inline: <<-SHELL
+     timedatectl set-timezone Europe/London
+     timedatectl set-ntp true
+     timedatectl --adjust-system-clock
      apt-get update
      apt-get install -y unzip
      cd /vagrant/software
