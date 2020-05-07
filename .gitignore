@@ -1,0 +1,14 @@
+secrets*
+secrets.*
+*.keys
+*keys*
+*Keys*
+*.log
+*.state
+*.plan
+secrets.*.tfvars
+*.tfstate
+*.tfstate.backup
+software/
+.vagrant
+.terraform

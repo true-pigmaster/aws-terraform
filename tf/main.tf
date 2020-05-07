@@ -8,7 +8,7 @@ provider "aws" {
     secret_key = var.aws_secret_access_key
 }
 
-resource "aws_instance" "tomcat" {
+resource "aws_instance" "terraform" {
     ami = "ami-06ce3edf0cff21f07" 
     instance_type = "t2.micro"
     key_name = var.key_pair_name
@@ -18,4 +18,4 @@ resource "aws_instance" "tomcat" {
         Creator = "Kamil Nowak"
     }
 }
-}
+

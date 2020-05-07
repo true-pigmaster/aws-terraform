@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
    end
   config.vm.define "terraform" do |ter|
     ter.vm.hostname = "terraform"
-    ter.vm.synced_folder "tf" , "/home/vagrant/src" 
+    ter.vm.synced_folder "tf" , "/home/vagrant/src", :mount_options => ["dmode=755,fmode=755"]
     ter.vm.provider "virtualbox" do |tvb|
       tvb.name = "terraform_vm"
     end
@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
      cd /vagrant/software
      unzip *.zip
      mv terraform /usr/bin
+     chmod a+x /usr/bin/terraform
      terraform version
    SHELL
 end
