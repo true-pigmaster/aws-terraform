@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "terraform" do |ter|
     ter.vm.hostname = "terraform"
     ter.vm.synced_folder "tf" , "/home/vagrant/src", :mount_options => ["dmode=755,fmode=755"]
+    ter.vm.synced_folder "secrets" , "/home/vagrant/keys", :mount_options => ["dmode=755,fmode=400"]
     ter.vm.provider "virtualbox" do |tvb|
       tvb.name = "terraform_vm"
     end
